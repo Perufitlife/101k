@@ -1,0 +1,13 @@
+{% extends "layout.html" %}
+
+{% block title %}Configuraciones{% endblock %}
+
+{% block content %}
+<h2>Configuraciones & Integraciones</h2>
+<ul>
+    <li><a href="{{ url_for('dashboard.config_facebook') }}">Cuentas de Facebook Ads</a></li>
+    <li><a href="{{ url_for('dashboard.config_tiktok') }}">Cuentas de TikTok</a></li>
+    <li><a href="{{ url_for('dashboard.config_mapping') }}">Mapeo de Productos</a></li>
+    <a href="{{ url_for('dashboard.google_auth') }}" class="btn btn-warning">Volver a autenticar con Google</a>
+</ul>
+{% endblock %}

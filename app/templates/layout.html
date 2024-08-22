@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Dashboard{% endblock %}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1>{% block header %}Bienvenido, {{ current_user.username }}{% endblock %}</h1>
+            <img src="{{ url_for('static', filename='images/logo.png') }}" alt="Logo" class="logo">
+        </header>
+        <div class="main-content">
+            <nav class="sidebar">
+                <ul>
+                    <li><a href="{{ url_for('dashboard.show_dashboard') }}">Dashboard</a></li>
+                    <li><a href="{{ url_for('dashboard.inventario') }}">Inventario</a></li>
+                    <li><a href="{{ url_for('dashboard.pedidos') }}">Pedidos</a></li>
+                    <li><a href="{{ url_for('dashboard.marketing') }}">Marketing</a></li>
+                    <li><a href="{{ url_for('dashboard.finanzas') }}">Finanzas</a></li>
+                    <li><a href="{{ url_for('dashboard.configuraciones') }}">Configuraciones</a></li>
+                    <li><a href="{{ url_for('dashboard.profile') }}">Profile</a></li>
+                    <li><a href="{{ url_for('auth.logout') }}">Cerrar Sesión</a></li>
+                    
+                </ul>
+            </nav>
+            <main class="content">
+                {% block content %}{% endblock %}
+            </main>
+        </div>
+    </div>
+</body>
+</html>

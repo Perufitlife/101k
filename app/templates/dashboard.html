@@ -1,0 +1,33 @@
+{% extends "layout.html" %}
+
+{% block title %}Dashboard{% endblock %}
+
+{% block content %}
+    <h2>Estadísticas Clave</h2>
+    <div class="stats">
+        <div class="stat">
+            <h3>Ventas Diarias</h3>
+            <p>{{ stats.ventas_diarias }}</p>
+        </div>
+        <div class="stat">
+            <h3>Ingresos Totales</h3>
+            <p>S/ {{ stats.ingresos_totales }}</p>
+        </div>
+        <div class="stat">
+            <h3>Pedidos Pendientes</h3>
+            <p>{{ stats.pedidos_pendientes }}</p>
+        </div>
+        <div class="stat">
+            <h3>Tasa de Conversión</h3>
+            <p>{{ stats.tasa_conversion }}%</p>
+        </div>
+        <div class="stat">
+            <h3>Productos con Bajo Stock</h3>
+            <p>{{ stats.productos_bajo_stock }}</p>
+        </div>
+        <div class="stat">
+            <h3>Gastos en Marketing</h3>
+            <p>S/ {{ stats.gastos_marketing }}</p>
+        </div>
+    </div>
+{% endblock %}

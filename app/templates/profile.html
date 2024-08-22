@@ -1,0 +1,23 @@
+{% extends "layout.html" %}
+
+{% block title %}Perfil{% endblock %}
+
+{% block content %}
+<h2>Actualizar Perfil</h2>
+<form method="POST" action="{{ url_for('dashboard.profile') }}">
+    {{ form.hidden_tag() }}
+    <div>
+        <label for="username">Nombre de Usuario</label>
+        {{ form.username(class_="form-control") }}
+    </div>
+    <div>
+        <label for="email">Correo Electrónico</label>
+        {{ form.email(class_="form-control") }}
+    </div>
+    <div>
+        <label for="new_password">Nueva Contraseña</label>
+        {{ form.new_password(class_="form-control") }}
+    </div>
+    <button type="submit" class="btn btn-primary">{{ form.submit.label.text }}</button>
+</form>
+{% endblock %}
